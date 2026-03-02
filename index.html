@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кава та Книга — кав'ярня-читальня</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Обгортка фіксованої ширини (макет 960px) -->
+    <div id="page-wrapper" class="layout-fixed">
+        <!-- Шапка сайту: 1 колонка на всю ширину -->
+        <header id="site-header">
+            <div class="header-inner">
+                <h1>Кава та Книга</h1>
+                <p class="tagline">Кав'ярня-читальня у центрі міста</p>
+            </div>
+        </header>
+
+        <!-- Навігація: блок на всю ширину -->
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#home">Головна</a></li>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#books">Книги</a></li>
+                <li><a href="#events">Події</a></li>
+                <li><a href="#contacts">Контакти</a></li>
+            </ul>
+        </nav>
+
+        <!-- Основний контент: макет з 3 колонок -->
+        <main id="main-content">
+            <!-- Ліва колонка (сайдбар) -->
+            <aside id="sidebar-left" class="column">
+                <h2>Графік роботи</h2>
+                <p>Пн–Пт: 8:00–22:00</p>
+                <p>Сб–Нд: 9:00–23:00</p>
+                <h2>Адреса</h2>
+                <p>вул. Хрещатик, 1</p>
+                <p>м. Київ</p>
+            </aside>
+            <!-- Центральна колонка (основний текст) -->
+            <section id="content-center" class="column">
+                <h2>Ласкаво просимо</h2>
+                <p>У нас ви можете насолодитися свіжою кавою, чаєм та десертами, переглянути книжкову полицю або прийти на вечір читання та майстер-класи.</p>
+                <h3>Що ми пропонуємо</h3>
+                <ul>
+                    <li>Кава та напої</li>
+                    <li>Солодощі та снеки</li>
+                    <li>Бібліотека для читання</li>
+                    <li>Зони для роботи та навчання</li>
+                </ul>
+            </section>
+            <!-- Права колонка (оголошення) -->
+            <aside id="sidebar-right" class="column">
+                <h2>Найближчі події</h2>
+                <p><strong>Середа, 18:00</strong> — Клуб книголюбів</p>
+                <p><strong>Субота, 12:00</strong> — Майстер-клас з кави</p>
+            </aside>
+        </main>
+
+        <!-- Секція з гнучким (розтягуваним) макетом: 2 колонки -->
+        <section id="promo-section" class="layout-fluid">
+            <div class="fluid-inner">
+                <h2>Акції тижня</h2>
+                <div class="two-columns">
+                    <div class="col col-left">
+                        <h3>Кава + круасан</h3>
+                        <p>Комплект за ціною кави. Діє до кінця тижня.</p>
+                    </div>
+                    <div class="col col-right">
+                        <h3>Друга книга напрокат — безкоштовно</h3>
+                        <p>При оренді двох книг друга — у подарунок.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Підвал: 1 колонка -->
+        <footer id="site-footer">
+            <div class="footer-inner">
+                <p>© 2025 Кава та Книга. Усі права захищені.</p>
+                <p>Контакт: <a href="mailto:info@kava-knyha.ua">info@kava-knyha.ua</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
