@@ -1,8 +1,4 @@
-/* ============================================
-   Лабораторна робота 1.3 — Блочна верстка
-   Макети: фіксована ширина, гнучка (fluid)
-   Колонки: 1, 2, 3
-   ============================================ */
+
 
 /* Скидання відступів для передбачуваної роботи блоків */
 * {
@@ -25,7 +21,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-    background-color: #f5f0e8;
+    background-color: #e6f1fb;
 }
 
 /* Обгортка займає всю доступну висоту, контент розтягується */
@@ -34,27 +30,25 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-width: 100%;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    max-width: 1160px;
+    margin: 1.5rem auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 25px rgba(0, 41, 82, 0.12);
     overflow: hidden;
+    border-radius: 12px;
 }
 
-/* Основний контент і промо займають простір, підвал внизу */
+/* Основний контент займає простір, нижні секції йдуть після нього */
 #main-content {
-    flex: 1 0 auto;
-}
-
-#promo-section.layout-fluid {
-    flex-shrink: 0;
+    flex: 0 0 auto;
 }
 
 /* ---------- Шапка: 1 колонка на всю ширину ---------- */
 #site-header {
     display: block;
-    background: linear-gradient(135deg, #4a3728 0%, #6b5344 100%);
-    color: #f5f0e8;
-    padding: 2rem 1.5rem;
+    background: linear-gradient(135deg, #0057b7 0%, #00aaff 100%);
+    color: #f5f9ff;
+    padding: 2.25rem 2rem;
 }
 
 .header-inner {
@@ -62,19 +56,19 @@ body {
 }
 
 #site-header h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
     margin-bottom: 0.25rem;
 }
 
 #site-header .tagline {
-    font-size: 1rem;
+    font-size: 1.02rem;
     opacity: 0.9;
 }
 
 /* ---------- Навігація: блок на всю ширину ---------- */
 #main-nav {
     display: block;
-    background-color: #5c4938;
+    background-color: #003b73;
 }
 
 #main-nav ul {
@@ -92,15 +86,18 @@ body {
 #main-nav a {
     display: block;
     padding: 0.75rem 1.25rem;
-    color: #f5f0e8;
+    color: #f5f9ff;
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
 }
 
 #main-nav a:hover {
-    background-color: #6b5344;
+    background-color: #0057b7;
 }
 
-/* ---------- Основний контент: макет з 3 колонок ---------- */
+/* ---------- Основний контент: макет з 2 колонок ---------- */
 #main-content {
     display: block;
     overflow: hidden;
@@ -108,29 +105,21 @@ body {
     background-color: #fff;
 }
 
-/* Три колонки через float (класичне блочне позиціонування) */
-#main-content .column {
+/* Дві колонки через float (класичне блочне позиціонування) */
+#main-content .column-two {
     float: left;
     padding: 0 1rem;
 }
 
-#sidebar-left {
-    width: 22%;
-    background-color: #faf8f5;
-    border-radius: 6px;
-    padding: 1rem;
+#content-main {
+    width: 64%;
+    border-right: 1px solid #dde8f5;
 }
 
-#content-center {
-    width: 56%;
-    border-left: 1px solid #e8e4dc;
-    border-right: 1px solid #e8e4dc;
-}
-
-#sidebar-right {
-    width: 22%;
-    background-color: #faf8f5;
-    border-radius: 6px;
+#sidebar-main {
+    width: 36%;
+    background-color: #f4f8ff;
+    border-radius: 8px;
     padding: 1rem;
 }
 
@@ -141,16 +130,18 @@ body {
     clear: both;
 }
 
-#main-content h2 {
+#main-content h2,
+#tours-grid h2 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
-    color: #4a3728;
+    color: #003b73;
 }
 
-#main-content h3 {
+#main-content h3,
+#tours-grid h3 {
     font-size: 1.1rem;
     margin: 1rem 0 0.5rem;
-    color: #5c4938;
+    color: #0066cc;
 }
 
 #main-content p,
@@ -162,13 +153,42 @@ body {
     padding-left: 1.25rem;
 }
 
+/* ---------- Блок з 3 колонками: популярні тури ---------- */
+#tours-grid {
+    padding: 0 1.5rem 1.5rem;
+    background-color: #ffffff;
+}
+
+#tours-grid h2 {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.tours-row {
+    overflow: hidden;
+}
+
+.tour-card {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+    background-color: #f4f8ff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 41, 82, 0.06);
+}
+
+.tour-card:last-child {
+    margin-right: 0;
+}
+
 /* ---------- Секція з гнучким (розтягуваним) макетом: 2 колонки ---------- */
 #promo-section.layout-fluid {
     display: block;
     width: 100%;
-    background-color: #4a3728;
-    color: #f5f0e8;
-    padding: 2rem 1.5rem;
+    background-color: #0057b7;
+    color: #f5f9ff;
+    padding: 2.25rem 2rem;
 }
 
 .fluid-inner {
@@ -191,7 +211,7 @@ body {
     float: left;
     width: 48%;
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.08);
+    background-color: rgba(255, 255, 255, 0.12);
     border-radius: 6px;
 }
 
@@ -222,9 +242,9 @@ body {
 /* ---------- Підвал: 1 колонка ---------- */
 #site-footer {
     display: block;
-    background-color: #2d2318;
-    color: #c4b8a8;
-    padding: 1.25rem 1.5rem;
+    background-color: #01213a;
+    color: #c4d4ea;
+    padding: 1.25rem 1.75rem;
     text-align: center;
 }
 
@@ -237,7 +257,7 @@ body {
 }
 
 #site-footer a {
-    color: #e8dcc8;
+    color: #ffffff;
 }
 
 #site-footer a:hover {
@@ -250,6 +270,8 @@ body {
 @media (max-width: 768px) {
     #page-wrapper.layout-fixed {
         box-shadow: none;
+        margin: 0;
+        border-radius: 0;
     }
 
     #site-header h1 {
@@ -266,8 +288,8 @@ body {
         text-align: center;
     }
 
-    /* 3 колонки → одна колонка, блоки один під одним */
-    #main-content .column {
+    /* 2 колонки → одна колонка, блоки один під одним */
+    #main-content .column-two {
         float: none;
         width: 100%;
         margin-bottom: 1rem;
@@ -275,13 +297,8 @@ body {
         border-right: none;
     }
 
-    #sidebar-left,
-    #sidebar-right {
+    #sidebar-main {
         border-radius: 0;
-    }
-
-    #content-center {
-        order: 0;
     }
 
     /* 2 колонки в акціях → одна колонка */
@@ -292,13 +309,21 @@ body {
         margin-right: 0;
     }
 
-    .fluid-inner {
+    .fluid-inner,
+    #tours-grid {
         max-width: 100%;
         padding: 0 1rem;
     }
 
+    .tour-card {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
     #promo-section.layout-fluid {
-        padding: 1.5rem 0;
+        padding: 1.75rem 0;
     }
 }
 
